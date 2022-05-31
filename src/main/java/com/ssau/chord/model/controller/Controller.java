@@ -37,7 +37,6 @@ public class Controller {
 
     /**
      * The singleton design pattern is applied
-     *
      * @return The singleton object
      */
     public static Controller getController() {
@@ -47,8 +46,9 @@ public class Controller {
     }
 
     /**
-     * Put in the map the new node of the network. The start time of the convergence is reset.
-     *
+     * Put in the map the new node of the network.
+     * The start time of the convergence is reset.
+
      * @param nodeId of the entering new node
      */
     synchronized void newConnection(Long nodeId) {
