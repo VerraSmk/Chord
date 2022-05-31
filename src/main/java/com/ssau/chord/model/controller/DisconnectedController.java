@@ -1,8 +1,10 @@
 package com.ssau.chord.model.controller;
 
 /**
- * Class used to substitute the real NodeControllerCommunicator, it has the same method but empty
- * in order to allow the correct behaviour of Node even if the Controller has been disconnected
+ * Класс, используемый для замены реального коммуникатора контроллера узла,
+ * имеет тот же метод, но пустой, чтобы обеспечить правильное поведение узла,
+ * даже если контроллер был отключен
+ *
  */
 public class DisconnectedController implements ControllerInterface {
     @Override

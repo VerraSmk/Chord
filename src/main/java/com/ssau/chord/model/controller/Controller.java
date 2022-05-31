@@ -16,9 +16,9 @@ import static java.lang.System.out;
  * прошедшего между началом операций, 'insert Key', 'lookup', 'find Key, и их фактическое
  * время окончания. Кроме того, класс несет ответственность для подсчета количества узлов,
  * присутствующих в сети аккордов, и способен измерять время конвергенции между
- *  два последовательных присоединения или выхода узла из самой сети.
- *  Все методы вызываются классом 'Controller Communicator', который имеет соответствующие методы, которые запускаются
- *  при поступлении сообщения определенного типа.
+ *  двумя последовательными присоединениями или выходами узла из самой сети.
+ *  Все методы вызываются классом 'Controller Communicator', который имеет соответствующие
+ *  методы, которые запускаются при поступлении сообщения определенного типа.
  */
 public class Controller {
     private static final String ANSI_RESET = "\u001B[0m";
@@ -46,9 +46,8 @@ public class Controller {
     }
 
     /**
-     * Put in the map the new node of the network.
-     * The start time of the convergence is reset.
-
+     * Нанесите на карту новый узел сети.
+     * Время начала конвергенции сбрасывается
      * @param nodeId of the entering new node
      */
     synchronized void newConnection(Long nodeId) {
@@ -158,8 +157,8 @@ public class Controller {
     }
 
     /**
-     * Is computed the elapsed time between the starting time of the operation, until the confirmation message
-     * of that functionality is arrived about a specific node.
+     * Вычисляется время, прошедшее между временем начала операции,
+     * пока не поступит сообщение о подтверждении этой функциональности для конкретного узла.
      *
      * @param nodeId of the node that has sent this corresponding message
      */
