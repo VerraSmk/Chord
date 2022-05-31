@@ -3,13 +3,12 @@ package com.ssau.chord.model.controller;
 import java.time.LocalTime;
 
 /**
- * The aim of this class is to keep track of the statistics of each connected Node to the Controller.
- * This object is used in the map of the controller as value associated the map where the key is the NodeId.
- * Controller:
- * - Stability of the Network after the new connection or disconnection
- * - Starting time of the Lookup
- * - Starting time of the InsertKey
- * - Starting time of the FindKey
+ Целью этого класса является отслеживание статистики каждого подключенного узла
+ к контроллеру. Этот объект используется в карте контроллера в качестве значения,
+ связанного с картой, где ключом является NodeID.
+ Контроллер:
+ - Стабильность работы Сети после нового подключения или отключения
+ - Время запуска методод Lookup, InsertKey, FindKey
  */
 class NodeInfo {
     private boolean stable;

@@ -18,7 +18,7 @@ import java.util.concurrent.Executors;
 import static java.lang.System.err;
 
 /**
- * Socket Node-side that deals the sending and receiving of Message to/from Controller
+ * Узел сокета, которая занимается отправкой и приемом сообщений к/от контроллера
  */
 public class SocketNodeController implements Runnable, Serializable {
     private String ipAddress;

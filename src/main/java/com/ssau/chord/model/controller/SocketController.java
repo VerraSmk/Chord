@@ -36,8 +36,8 @@ public class SocketController implements Runnable, Serializable {
     }
 
     /**
-     * While the node is connected (connected == true) the method calls the getMessage method to receives the
-     * message from the node
+     * Пока нода подключена (connected == true) метод вызывает getMessage метод
+     * для получения сообщения от узла
      */
     @Override
     public void run() {
@@ -56,8 +56,8 @@ public class SocketController implements Runnable, Serializable {
     }
 
     /**
-     * Receives the message from the node,
-     * and when the other node has disconnected calls the nodeDisconnected method of ControllerCommunicator
+     * Получает сообщение от узла, и когда другой узел отключился,
+     * вызывает метод отключения узла коммуникатора контроллера
      *
      * @return the received message
      */
