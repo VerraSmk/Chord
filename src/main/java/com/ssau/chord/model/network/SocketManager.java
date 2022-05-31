@@ -20,8 +20,8 @@ import static java.lang.System.exit;
 /**
  * Handle the socket connections of the node
  * node is the owner of the SocketManager
- * socketList is a map between nodeId and the corresponding outgoing socket connection
- * socketNumber is a map between nodeId and the number of open connections to that node
+ * socketList карта между nodeId и соответствующими исходящими соединениями сокета
+ * socketNumber карта между nodeId и числом от крытых коннектов с этой нодой
  */
 public class SocketManager {
     private volatile Node node;
@@ -71,8 +71,8 @@ public class SocketManager {
     }
 
     /**
-     * Used to create the ingoing socket connections.
-     * Method called only by the constructor of SocketNode
+     * Используется для создания входящих подключений к сокетам.
+     * Метод, вызываемый только конструктором узла сокета
      *
      * @param socketNode socketNode of node that is connecting
      * @param ipAddress  ipAddress of node that is connecting
@@ -103,8 +103,11 @@ public class SocketManager {
     }
 
     /**
-     * If nodeId has a number greater or equal to 2 of open connections, simply decreases by one the number of connections
-     * if nodeId has only 1 open connection, close the connection and remove it from socketList and socketNumber
+     * Если NodeID имеет число открытых подключений большее или равное 2:
+     * просто уменьшите на единицу количество подключений
+     *
+     * Если NodeID имеет только 1 открытое соединение:
+     * закройте соединение и удалите его из списка сокетов и номера сокета
      *
      * @param nodeId nodeId of node to which we want close the connection
      */

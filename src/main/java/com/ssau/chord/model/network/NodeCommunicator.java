@@ -140,8 +140,9 @@ public class NodeCommunicator implements NodeInterface, Serializable, MessageHan
 
     /**
      * {@inheritDoc}
-     * Sends a GetInitialSocketPortRequest to the other node, waits on the objects corresponding to the message index
-     * and finally retrieve the returned value from the GetInitialSocketPortResponse corresponding to the message index
+     * Отправляет запрос Get Initial Socket Port на другой узел, ожидает объекты,
+     * соответствующие индексу сообщения, и, наконец, извлекает возвращаемое значение
+     * из ответа Get Initial Socket Port, соответствующего индексу сообщения
      *
      * @return {@inheritDoc}
      * @throws TimerExpiredException {@inheritDoc}
@@ -180,8 +181,9 @@ public class NodeCommunicator implements NodeInterface, Serializable, MessageHan
 
     /**
      * {@inheritDoc}
-     * Sends a GetDimFingerTableRequest to the other node, waits on the objects corresponding to the message index
-     * and finally retrieve the returned value from the GetDimFingerTableResponse corresponding to the message index
+     * Отправляет запрос Get Dim Finger Table на другой узел, ожидает объекты,
+     * соответствующие индексу сообщения, и, наконец, извлекает возвращаемое значение
+     * из ответа Get Dim Finger Table, соответствующего индексу сообщения
      *
      * @return {@inheritDoc}
      * @throws TimerExpiredException {@inheritDoc}
@@ -220,8 +222,9 @@ public class NodeCommunicator implements NodeInterface, Serializable, MessageHan
 
     /**
      * {@inheritDoc}
-     * Sends a FindSuccessorRequest to the other node, waits on the objects corresponding to the message index
-     * and finally retrieve the returned value from the FindSuccessorResponse corresponding to the message index
+     * Отправляет запрос FindSuccessor на другой узел, ожидает объекты,
+     * соответствующие индексу сообщения, и, наконец, извлекает возвращаемое
+     * значение из ответа FindSuccessor, соответствующего индексу сообщения
      *
      * @param id NodeId to be found
      * @return
@@ -460,12 +463,13 @@ public class NodeCommunicator implements NodeInterface, Serializable, MessageHan
         throw new UnexpectedBehaviourException();
     }
 
-    //---------> Handling of Messages
+    //TODO Handling of Messages
 
     /**
      * {@inheritDoc}
-     * Calls findSuccessor method of node, with the parameters taken from findSuccessorRequest message.
-     * After sends a FindSuccessorResponse, containing the obtained object, to the requesting node
+     * Вызывает метод findSuccessor узла с параметрами, взятыми
+     * из сообщения запроса findSuccessor. Отправляем ответ FindSuccessor,
+     * содержащий полученный объект, запрашивающему узлу
      *
      * @param findSuccessorRequest the received findSuccessorRequest message
      * @throws IOException
@@ -487,8 +491,9 @@ public class NodeCommunicator implements NodeInterface, Serializable, MessageHan
 
     /**
      * {@inheritDoc}
-     * Takes the lockId parameter from the findSuccessorResponse unlocks the method in wait
-     * on the object of lockList and put the findSuccessorResponse in messageList
+     * Берем параметр lockId из findSuccessorResponse разблокирует ожидающий метод
+     * для объекта lockList и помещает ответ findSuccessor в MessageList
+     *
      *
      * @param findSuccessorResponse the received findSuccessorResponse message
      * @throws IOException
@@ -503,8 +508,9 @@ public class NodeCommunicator implements NodeInterface, Serializable, MessageHan
 
     /**
      * {@inheritDoc}
-     * Calls notify method of node, with the parameters taken from notifyRequest message.
-     * After sends a TerminatedMethodMessage to the requesting node
+     * Вызывает метод уведомления узла с параметрами, взятыми из сообщения
+     * запроса уведомления. После отправки сообщения о завершенном методе
+     * запрашивающему узлу
      *
      * @param notifyRequest the received notifyRequest message
      * @throws IOException
@@ -521,8 +527,8 @@ public class NodeCommunicator implements NodeInterface, Serializable, MessageHan
 
     /**
      * {@inheritDoc}
-     * Takes the lockId parameter from the findSuccessorResponse unlocks the method in wait
-     * on the object of lockList
+     * Берем lockId из findSuccessorResponse и разблокируем разблокирует ожидающий
+     * метод для объекта lockList
      *
      * @param terminatedMethodMessage the received TerminatedMethodMessage message
      * @throws IOException
