@@ -91,11 +91,13 @@ public class Node implements NodeInterface, Serializable {
     }
 
     /**
-     * This method is invoked only one time in the chord system. The node that does the creation of the network
-     * specify its dimensions. Based on it, and its IPv4 address and port, the node compute its hash to get
-     * the right nodeId. Start to listen on a specific port to accept incoming connection request to the network and
-     * initialize the socketManger that manages all the sockets connection and the list of successor.
-     * It also establish a socket to the controller, and shares with it its information.
+     * Этот метод вызывается только один раз в системе аккордов.
+     * Узел, который создает сеть, определяет ее размеры. Основываясь на нем,
+     * а также на его IPv4-адресе и порту, узел вычисляет свой хэш, чтобы получить
+     * правильный идентификатор узла. Начните прослушивать определенный порт,
+     * чтобы принять входящий запрос на подключение к сети и инициализировать диспетчер
+     * сокетов, который управляет подключением всех сокетов и списком последователей.
+     * Он также устанавливает сокет для контроллера и делится с ним своей информацией.
      *
      * @param dimFingerTable is the power of two that will represent the dimension of the chord network
      * @throws ConnectionErrorException if the controller is not available
@@ -116,11 +118,13 @@ public class Node implements NodeInterface, Serializable {
     }
 
     /**
-     * If a node wants to enter into Chord Network, it has to join to a already present node. The node contacts the
-     * node, receives all the information about the network. Then the node can calculate itself the right NodeId
-     * and then does the same passages of the create procedure. In addition there is a control on the computed NodeId:
-     * if it already present, another nodeId is computed. The node already presents in the network gives also to the
-     * joining node its possible successor node.
+     * Если узел хочет войти в сеть Chord Network, он должен присоединиться к уже существующему узлу.
+     * Узел связывается с узлом, получает всю информацию о сети. Затем узел может сам вычислить
+     * правильный идентификатор узла, а затем выполнить те же действия процедуры создания.
+     *
+     * Кроме того, существует элемент управления вычисляемым идентификатором узла:
+     * если он уже присутствует, вычисляется другой идентификатор узла. Узел, уже
+     * присутствующий в сети, также передает присоединяющемуся узлу его возможный узел-преемник
      *
      * @param joinIpAddress  Ip address of a node already present in the Chord network
      * @param joinSocketPort Port of a node already present in the Chord network
@@ -218,8 +222,9 @@ public class Node implements NodeInterface, Serializable {
             successorList.get(0).notify(this);
             return;
         }
-        // If the predecessor given form the successor is between the current node and its successor
-        // it'll set it as its first successor and notify it.
+        /** Если предшественник, заданный в форме преемника, находится между текущим узлом и его преемником
+        он установит его в качестве своего первого преемника и уведомит об этом.
+         */
         long nodeIndex = x.getNodeId();
         long oldSucID = successorList.get(0).getNodeId();
         if (checkInterval(getNodeId(), nodeIndex, oldSucID)) {
