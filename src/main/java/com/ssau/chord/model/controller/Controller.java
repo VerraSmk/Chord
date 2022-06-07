@@ -143,7 +143,7 @@ public class Controller {
         LocalTime startTime = nodeMap.get(nodeId).getStartTimeInsertKey();
         long elapsed = Duration.between(startTime, endTime).toMillis();
         double pass = elapsed / 1000.0;
-        out.println(ANSI_PURPLE + "Tempo per Insert Key : " + pass + " sec. - Numero Nodi "
+        out.println(ANSI_PURPLE + "Time of Insert Key : " + pass + " sec. - Nodes number "
                 + nodeMap.size() + ANSI_RESET);
     }
 
@@ -167,7 +167,7 @@ public class Controller {
         LocalTime startTime = nodeMap.get(nodeId).getStartTimeFindKey();
         long elapsed = Duration.between(startTime, endTime).toMillis();
         double pass = elapsed / 1000.0;
-        out.println(ANSI_YELLOW + "Tempo per Find Key : " + pass + " sec. - Numero Nodi "
+        out.println(ANSI_YELLOW + "Time of Find Key : " + pass + " sec. - Nodes number "
                 + nodeMap.size() + ANSI_RESET);
     }
 }

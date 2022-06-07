@@ -131,7 +131,7 @@ public class NodeCommunicator implements NodeInterface, Serializable, MessageHan
 
             f.get(TIMEOUT, TimeUnit.MILLISECONDS);
         } catch (final TimeoutException e) {
-            out.println("Timer scaduto NOTIFY");
+            out.println("Timer expired NOTIFY");
             throw new TimerExpiredException();
         } catch (InterruptedException | ExecutionException e) {
             Thread.currentThread().interrupt();
@@ -169,7 +169,7 @@ public class NodeCommunicator implements NodeInterface, Serializable, MessageHan
 
             f.get(TIMEOUT, TimeUnit.MILLISECONDS);
         } catch (final TimeoutException e) {
-            out.println("Timer scaduto GETSOCKET PORT");
+            out.println("Timer expired GETSOCKET PORT");
             throw new TimerExpiredException();
         } catch (InterruptedException | ExecutionException e) {
             Thread.currentThread().interrupt();
@@ -210,7 +210,7 @@ public class NodeCommunicator implements NodeInterface, Serializable, MessageHan
 
             f.get(TIMEOUT, TimeUnit.MILLISECONDS);
         } catch (final TimeoutException e) {
-            out.println("Timer scaduto GET DIM FINGER TABLE");
+            out.println("Timer expired GET DIM FINGER TABLE");
             throw new TimerExpiredException();
         } catch (InterruptedException | ExecutionException e) {
             Thread.currentThread().interrupt();
@@ -252,7 +252,7 @@ public class NodeCommunicator implements NodeInterface, Serializable, MessageHan
 
             f.get(TIMEOUT, TimeUnit.MILLISECONDS);
         } catch (final TimeoutException e) {
-            out.println("Timer scaduto FIND SUCCESSOR");
+            out.println("Timer expired FIND SUCCESSOR");
             throw new TimerExpiredException();
         } catch (InterruptedException | ExecutionException e) {
             Thread.currentThread().interrupt();
@@ -284,7 +284,7 @@ public class NodeCommunicator implements NodeInterface, Serializable, MessageHan
 
             f.get(TIMEOUT, TimeUnit.MILLISECONDS);
         } catch (final TimeoutException e) {
-            out.println("Timer scaduto GET PREDECESSOR");
+            out.println("Timer expired GET PREDECESSOR");
             throw new TimerExpiredException();
         } catch (InterruptedException | ExecutionException e) {
             Thread.currentThread().interrupt();
@@ -316,7 +316,7 @@ public class NodeCommunicator implements NodeInterface, Serializable, MessageHan
 
             f.get(TIMEOUT, TimeUnit.MILLISECONDS);
         } catch (final TimeoutException e) {
-            out.println("Timer scaduto GET SUCCESSOR LIST");
+            out.println("Timer expired GET SUCCESSOR LIST");
             throw new TimerExpiredException();
         } catch (InterruptedException | ExecutionException e) {
             Thread.currentThread().interrupt();
@@ -360,7 +360,7 @@ public class NodeCommunicator implements NodeInterface, Serializable, MessageHan
 
             f.get(TIMEOUT, TimeUnit.MILLISECONDS);
         } catch (final TimeoutException e) {
-            out.println("Timer scaduto ADD KEY");
+            out.println("Timer expired ADD KEY");
             throw new TimerExpiredException();
         } catch (InterruptedException | ExecutionException e) {
             Thread.currentThread().interrupt();
@@ -413,7 +413,7 @@ public class NodeCommunicator implements NodeInterface, Serializable, MessageHan
 
             f.get(TIMEOUT, TimeUnit.MILLISECONDS);
         } catch (final TimeoutException e) {
-            out.println("Timer scaduto FIND KEY");
+            out.println("Timer expired FIND KEY");
             throw new TimerExpiredException();
         } catch (InterruptedException | ExecutionException e) {
             Thread.currentThread().interrupt();
